@@ -51,3 +51,14 @@ body {
     border: none;
     background-color: #ff91ba;
   }
+  .bas-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    background-color: salmon;
+    padding: 10px;
+  }
+  .bas-item img {
+    max-height: 50px;
+  }
