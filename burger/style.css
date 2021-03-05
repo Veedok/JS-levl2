@@ -1,0 +1,17 @@
+.burgerblock {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    border: solid rebeccapurple 3px;
+    margin: 10px;
+    max-width: 350px;
+}
+label {
+    flex-basis: 90%;
+}
+.burgerblockResult {
+    padding: 0 50px;
+    border: solid rebeccapurple 3px;
+    margin: 10px;
+    max-width: 350px;
+}

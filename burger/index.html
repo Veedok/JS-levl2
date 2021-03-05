@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="#">
+        <div class="burgerblock">
+            <input type="radio" name="size" id="lb" data-p="50" data-ccal="20">
+            <label for="lb">Маленький бургер цена:50руб. , 20 калорий</label>
+            <input type="radio" name="size" id="bb" data-p="100" data-ccal="40">
+            <label for="bb">Большой бургер цена:100руб., 40 калорий</label>
+        </div>
+        <div class="burgerblock">
+            <input type="radio" name="additive" id="additiveCheese" data-p="10" data-ccal="20">
+            <label for="additiveCheese">Добавка "Сыр" цена:10руб., 20 калорий</label>
+            <input type="radio" name="additive" id="additiveSalad" data-p="20" data-ccal="5">
+            <label for="additiveSalad">Добавка "Салат" цена:20руб., 5 калорий</label>
+            <input type="radio" name="additive" id="additivePotato" data-p="15" data-ccal="10">
+            <label for="additivePotato">Добавка "Картофель" цена:15руб., 10 калорий</label>
+        </div>
+        <div class="burgerblock">
+            <input type="checkbox" name="add" id="additiveSeasoning" data-p="15" data-ccal="0">
+            <label for="additiveSeasoning">Добавить приправы цена:15руб., 0 калорий</label>
+            <input type="checkbox" name="add" id="additiveMayonnaise" data-p="20" data-ccal="5">
+            <label for="additiveMayonnaise">Добавить майонез 20руб., 5 калорий</label>
+        </div>
+        <button onclick="burger()">Посчитать</button>
+        <div class="burgerblockResult">
+        <p id="result">Цена вашего бургера: <span id="price"></span> <br>
+            Количествово калорий в вашем бургере: <span id="cal"></span></p></div>
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>

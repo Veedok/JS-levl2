@@ -1,83 +1,110 @@
-const products = [{
-        id: 1,
-        title: 'Notebook',
-        price: 20000,
-        img: 'https://placeimg.com/1000/1000/animals'
-    },
-    {
-        id: 2,
-        title: 'Mouse',
-        price: 1500,
-        img: 'https://placeimg.com/1000/1000/arch'
-    },
-    {
-        id: 3,
-        title: 'Keyboard',
-        price: 5000,
-        img: 'https://placeimg.com/1000/1000/nature'
-    },
-    {
-        id: 4,
-        title: 'Gamepad',
-        price: 4500,
-        img: 'https://placeimg.com/1000/1000/tech'
-    },
-    {
-        id: 5,
-        title: 'Monitor',
-        price: 15000,
-        img: 'https://placeimg.com/1000/1000/people'
-    },
-    {
-        id: 6,
-        title: 'Speakers',
-        price: 5000,
-        img: 'https://placeimg.com/1000/1000/grayscale'
-    },
-    {
-        id: 7,
-        title: 'Headphones',
-        price: 2000,
-        img: 'https://placeimg.com/1000/1000/sepia'
-    },
-    {
-        id: 8,
-        title: 'Microphone',
-        price: 500,
-        img: 'https://placeimg.com/1000/1000/tech'
-    },
-];
+const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+class ProductList {
+  #goods;
+  #allProducts;
 
-// const renderProduct = (title = 'not in stock', price = 'N/A', img) => {
-//     return `<div class="product-item">
-//                 <h3>${title}</h3>
-//                 <p>${price}</p>
-//                 <img class="productIMG" src=${img} alt="">
-//                 <button class="by-btn">Добавить в корзину</button>
-//               </div>`;
-// }
+  constructor(container = '.products') {
+    this.container = container;
+    this.#goods = [];
+    this.#allProducts = [];
+    this.#fetchGoods();
+  }
 
-// const renderProducts = (list) => {
-//     const productList = list.map((item) => {
-//         return renderProduct(item.title, item.price, item.img);
-//     });
+  #fetchGoods() {
+    const prom = (url, fileName) => {
+      return new Promise ((resolve, reject) => {
+        if (url) resolve(url + fileName);
+        else reject('Ошибка!');
+      });
+  }
+  prom(API, "/catalogData.json").then((data) => {
+    let request = new XMLHttpRequest();
+    request.open('GET', data, true);
+    request.responseType = 'json';
+    request.send();
+    request.onload = () => {
+      let obj = request.response;      
+      this.#goods = obj;
+      this.#render(obj);
+          }
+  }).catch((err) => {
+    console.log(err)
+  });
 
-//     console.log(productList);
-//     document.querySelector('.products').innerHTML = productList;
-// }
 
-// renderProducts(products);
+  }
 
-products.forEach(function (elem) {
-    if (elem.title == undefined || elem.price == undefined || elem.img == undefined) {
-        return true;
-    } else {
-        let newProduct = `<div class="product-item">
-    <h3>${elem.title}</h3>
-    <p>${elem.price}</p>
-    <img class="productIMG" src=${elem.img} alt="imgProduct">
-    <button class="by-btn">Добавить в корзину</button>
-  </div>`;
-        document.querySelector('.products').insertAdjacentHTML('beforeend', newProduct);
-    }
-});
+  #render(i) {
+    const block = document.querySelector(this.container);
+    this.#goods.forEach((product) => {
+      const productObject = new ProductItem(product);
+      this.#allProducts.push(productObject);
+      block.insertAdjacentHTML('beforeend', productObject.render());     
+    });
+    block.addEventListener('click', function my(params) {
+     if(params.target.classList.contains('by-btn')){
+       const mybass = document.querySelector('.bass');
+       console.log(i)
+       let byProd = +params.target.parentNode.dataset['id'];
+       let objBas = i.find(i => i.id_product=== byProd)
+       let myProduct = new BasketListAdd(objBas);
+       mybass.insertAdjacentHTML('beforeend', myProduct.renderbasket());
+
+     };
+     const basketBlock = document.querySelector('.bass');
+     basketBlock.addEventListener('click', function dellbas(params) {
+      if(params.target.parentNode.classList.contains('del')) {
+        params.target.parentNode.parentNode.remove();
+      } else if (params.target.classList.contains('del')) {
+        params.target.parentNode.remove();
+      }
+     })
+      
+    })
+  }
+ 
+}
+class ProductItem {
+  constructor(product, img='https://placehold.it/200x150') {
+    this.title = product.product_name;
+    this.price = product.price;
+    this.id = product.id_product;
+    this.img = img;
+  }
+
+  render() {
+    return `<div class="product-item" data-id="${this.id}">
+         <h3>${this.title}</h3>
+         <img src="${this.img}" alt="Some img">
+         <p>${this.price}</p>
+         <button class="by-btn">Добавить в корзину</button>
+       </div>`;
+  }
+}
+
+const productList = new ProductList();
+
+
+class BasketListAdd extends ProductItem {
+  constructor(product) {
+    super(product);
+  }
+  renderbasket() {
+   return `<div class="bas-item" data-id="${this.id}">         
+         <img src="${this.img}" alt="Some img">
+         <h3>${this.title}</h3>
+         <p>${this.price}</p>
+         <button class="del"><i class="fas fa-times-circle"></i></button>
+       </div>`;
+  }
+
+}
+class BasketListRem {
+
+}
+class BasketItem {
+
+}
+class BasketTotalPrise {
+
+}
