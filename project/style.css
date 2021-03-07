@@ -51,7 +51,7 @@ body {
     border: none;
     background-color: #ff91ba;
   }
-  .bas-item {
+  .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,4 +61,27 @@ body {
   }
   .bas-item img {
     max-height: 50px;
+  }
+  .bas-holder {
+    position: relative;
+  }
+  .cart-block {
+    position: absolute;
+    background-color: aquamarine;
+    min-width: 300px;
+    left: 1380px;
+    top: 75px;
+  }
+  .product-bio {
+    display: flex;
+  }
+  .product-desc {
+    margin-left: 20px;
+  }
+  .right-block {
+    display: flex;
+    align-items: center;
+  }
+  .right-block button {
+    max-height: 25px;
   }
