@@ -27,9 +27,7 @@ class List {
   render() {
     const block = document.querySelector(this.wraper);
     for (let product of this.goods) {
-      console.log(this.constructor.name);
       const productObj = new this.list[this.constructor.name](product);
-      console.log(productObj);
       this.allProducts.push(productObj);
       block.insertAdjacentHTML('beforeend', productObj.render());
     }
@@ -119,10 +117,7 @@ class Cart extends List{
               product_name: element.dataset['name'],
               quantity: 1
             };
-            // goods - это своего рода "опорный" массив, отражающий список товаров, которые нужно отрендерить.
-            // При добавлении нового товара, нас интересует только он один.
             this.goods = [product];
-            // далее вызывая метод render, мы добавим в allProducts только его, тем самым избегая лишнего перерендера.
             this.render();
           }
         } else {
@@ -141,10 +136,10 @@ class Cart extends List{
         if(data.result === 1){
           let productId = +element.dataset['id'];
           let find = this.allProducts.find(product => product.id_product === productId);
-          if(find.quantity > 1){ // если товара > 1, то уменьшаем количество на 1
+          if(find.quantity > 1){
             find.quantity--;
             this._updateCart(find);
-          } else { // удаляем
+          } else {
             this.allProducts.splice(this.allProducts.indexOf(find), 1);
             document.querySelector(`.cart-item[data-id="${productId}"]`).remove();
           }
