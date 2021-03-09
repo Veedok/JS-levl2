@@ -1,15 +1,17 @@
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 class List {
-  constructor(url, wraper, list = listContext) {
+  constructor(url, wraper, list = listContext, serch = '#serch') {
     this.wraper = wraper;
     this.list = list;
     this.url = url;
     this.goods = [];
     this.allProducts = [];
     this.filtered = [];
+    this.serch = serch;
     this._init();
   }
+ 
   getJson(url) {
     return fetch(url ? url : `${API + this.url}`)
       .then(result => result.json())
@@ -167,7 +169,8 @@ class Cart extends List{
       if(e.target.classList.contains('del-btn')){
         this.removeProduct(e.target);
       }
-    })
+    });
+
   }
 
 }
@@ -202,6 +205,7 @@ const listContext = {
 
 let cart = new Cart();
 let products = new ProductsList(cart);
+
 
 
 
