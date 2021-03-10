@@ -12,7 +12,7 @@
     <header>
         <div class="logo">Интернет-магазин</div>
         <div class="cart">
-            <form action="#" class="search-form" @submit.prevent="filter">
+            <form action="#" class="search-form" @submit.prevent="$refs.products.filter">
                 <input type="text" class="search-field" v-model="userSearch">
                 <button class="btn-search" type="submit">
                     <i class="fas fa-search"></i>
