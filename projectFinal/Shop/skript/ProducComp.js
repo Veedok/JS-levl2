@@ -39,7 +39,7 @@ Vue.component('product', {
                             <div class="item_mask item_mask_product">
                                     <div class="buy_item"><img src="img/cart.png" alt=""><span>Add to Cart</span></div>
                                 </div>
-                            <img src={{product.img}} alt="">
+                            <img :src="product.img" alt="">
                             <p class="catalog_text">{{product.product_name}}</p>
                             <p class="catalog_price">{{product.price}}</p>
                         </div>

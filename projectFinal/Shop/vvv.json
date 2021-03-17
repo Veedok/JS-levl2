@@ -9,13 +9,13 @@
       "id_product": 2,
       "product_name": "Gamepad",
       "price": 3000,
-      "img": "img/Product/image_placeholder_1877.jpg"
+      "img": "img/Product/image_placeholder_1877.png"
     },
     {
       "id_product": 3,
       "product_name": "Gamepad",
       "price": 3000,
-      "img": "img/Product/image_placeholder_1907.jpg"
+      "img": "img/Product/image_placeholder_1907.png"
     },
     {
       "id_product": 4,
@@ -51,6 +51,6 @@
         "id_product": 9,
         "product_name": "Gamepad",
         "price": 3000,
-      "img": "img/Product/image_placeholder_2087.jpg"
+      "img": "img/Product/image_placeholder_2087.png"
       }
   ]
