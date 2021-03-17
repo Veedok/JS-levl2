@@ -1,4 +1,4 @@
-const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+const API = 'https://raw.githubusercontent.com/Veedok/JS-levl2/Dev1/projectFinal/Shop';
 
 const app = new Vue({
     el: '#app',
