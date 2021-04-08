@@ -3,54 +3,54 @@
       "id_product": 1,
       "product_name": "Keyboard",
       "price": 1600,
-      "img": "img/Product/image_placeholder_1657.jpg"
+      "img": "@/assets/img/Product/image_placeholder_1657.jpg"
     },
     {
       "id_product": 2,
       "product_name": "Gamepad",
       "price": 3000,
-      "img": "img/Product/image_placeholder_1877.png"
+      "img": "@/assets/img/Product/image_placeholder_1877.png"
     },
     {
       "id_product": 3,
       "product_name": "Gamepad",
       "price": 3000,
-      "img": "img/Product/image_placeholder_1907.png"
+      "img": "@/assets/img/Product/image_placeholder_1907.png"
     },
     {
       "id_product": 4,
       "product_name": "Gamepad",
       "price": 3000,
-      "img": "img/Product/image_placeholder_1937.jpg"
+      "img": "@/assets/img/Product/image_placeholder_1937.jpg"
     },
     {
       "id_product": 5,
       "product_name": "Gamepad",
       "price": 3000,
-      "img": "img/Product/image_placeholder_1967.jpg"
+      "img": "@/assets/img/Product/image_placeholder_1967.jpg"
     },
     {
         "id_product": 6,
         "product_name": "Gamepad",
         "price": 3000,
-      "img": "img/Product/image_placeholder_1997.jpg"
+      "img": "@/assets/img/Product/image_placeholder_1997.jpg"
       },
       {
         "id_product": 7,
         "product_name": "Gamepad",
         "price": 3000,
-      "img": "img/Product/image_placeholder_2027.jpg"
+      "img": "@/assets/img/Product/image_placeholder_2027.jpg"
       },
       {
         "id_product": 8,
         "product_name": "Gamepad",
         "price": 3000,
-      "img": "img/Product/image_placeholder_2057.jpg"
+      "img": "@/assets/img/Product/image_placeholder_2057.jpg"
       },
       {
         "id_product": 9,
         "product_name": "Gamepad",
         "price": 3000,
-      "img": "img/Product/image_placeholder_2087.png"
+      "img": "@/assets/img/Product/image_placeholder_2087.png"
       }
   ]
