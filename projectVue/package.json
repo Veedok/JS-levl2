@@ -1,0 +1,14 @@
+{
+  "name": "projectvue",
+  "version": "1.0.0",
+  "description": "My project JS lvl 2 Geekbrains",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Veedok",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
